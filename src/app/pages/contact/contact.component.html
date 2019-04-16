@@ -1,0 +1,32 @@
+<h3>Fale conosco</h3>
+
+<form #form="ngForm" (ngSubmit)="onSubmit(form)">
+  Nome: <input name="name" ngModel #name="ngModel">
+  Telefone: <input name="fone" ngModel>
+  <p>
+    <button>Salvar</button>
+  </p>
+</form>
+
+<p>
+  Nome: {{name.value}}
+</p>
+
+<table>
+  <tr>
+    <td>
+      Nome
+    </td>
+    <td>
+      Telefone
+    </td>
+  </tr>
+  <tr *ngFor="let contact of contacts">
+    <td>
+      {{contact.name}}
+    </td>
+    <td>
+      {{contact.fone}}
+    </td>
+  </tr>
+</table>
